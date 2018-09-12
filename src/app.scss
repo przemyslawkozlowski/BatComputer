@@ -1,0 +1,172 @@
+.container {
+  width:100%;
+  margin: 0 auto;
+  background: #ddd;
+  display: flex;
+  flex-direction: inherit ;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.row1 {
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.row2 {
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.row3 {
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.panel {
+  width: 20vw;
+  background: black;
+  margin: 10px;
+  transition: 1s;
+  display: inline-block;
+}
+
+.nr5 {
+  flex-grow: 2;
+}
+.nr6 {
+  flex-grow: 3;
+}
+.nr7 {
+  flex-grow: 2;
+}
+.main {
+  flex-grow:3
+}
+
+.panel:hover {
+  transform: scale(1.2);
+  background: darkcyan;
+  z-index: 2;
+  box-shadow: 2px 2px 2px #000;
+}
+
+//for tablet
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .row1 {
+    float: none;
+    height: 30vh;
+    width: 100%;
+    order: 3;
+  }
+  .row2 {
+
+    float: none;
+    height: 40vh;
+    width: 100%;
+    order: 2;
+  }
+
+  .row3 {
+    align-items: center;
+    float: none;
+    height: 80vh;
+    order: 1;
+  }
+
+  .nr8 {
+    height: 50%;
+  }
+
+  .main {
+    height: 100%;
+  }
+
+  .nr10 {
+    height: 50%;
+  }
+
+
+  .panel:hover {
+    transform: scale(1.05);
+    background: darkcyan;
+    z-index: 2;
+    box-shadow: 2px 2px 2px #000;
+  }
+}
+
+
+// for mobile
+
+@media screen and (max-width: 767px) {
+
+  .row1 {
+    flex-direction: column;
+    float: none;
+    height: 50vh;
+    width: 100%;
+    order: 3;
+    a {
+      width: 95%;
+      height: 25%;
+    }
+  }
+  .row2 {
+    flex-direction: column;
+    float: none;
+    height: 80vh;
+    width: 100%;
+    order: 2;
+    a {
+      width: 95%;
+    }
+    .nr5 {
+      order: 2;
+    }
+    .nr6 {
+      order: 1;
+    }
+    .nr7 {
+      order: 2;
+    }
+  }
+
+  .row3 {
+    flex-direction: column;
+    float: none;
+    height: 100vh;
+    width: 100%;
+    order: 1;
+    a {
+      width: 95%;
+    }
+    .main {
+      flex-grow: 3;
+    }
+    .nr8 {
+      order: 2;
+      flex-grow: 1;
+    }
+    .nr10 {
+      order: 2;
+      flex-grow: 1;
+    }
+  }
+
+  .panel:hover {
+    transform: scale(1.05);
+    background: darkcyan;
+    z-index: 2;
+    box-shadow: 2px 2px 2px #000;
+  }
+}
+
+
+
