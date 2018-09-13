@@ -1,51 +1,52 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import {Link, NavLink, Route, HashRouter, Switch,} from 'react-router-dom';
+import {Link, NavLink, Route, HashRouter, Switch, Router} from 'react-router-dom';
 import './app.scss';
 
 const activeLinkStyle = {
-    fontWeight: 700,
-    backgroundColor: 'lightgray'
+    height: '100wh',
+    width: '100vw',
+    backgroundColor: 'red'
 };
 
 const Navigation = () => {
     return (
         <div className={'container'}>
             <div className={'row1'}>
-                <Link exact to="/" activeStyle={activeLinkStyle} className={'panel nr1'}>
+                <NavLink exact to="/1"  className={'panel nr1 flux'}>
                     Panel1
-                </Link>
-                <Link to="/hello/Jan" activeStyle={activeLinkStyle} className={'panel nr2'}>
+                </NavLink>
+                <NavLink to="/2"  className={'panel nr2 flux'}>
                     Panel2
-                </Link>
-                <Link to="/checkage/50" activeStyle={activeLinkStyle} className={'panel nr3'}>
+                </NavLink>
+                <NavLink to="/3"  className={'panel nr3 flux'}>
                     Panel3
-                </Link>
-                <Link to="/checkage/50" activeStyle={activeLinkStyle} className={'panel nr4'}>
+                </NavLink>
+                <NavLink to="/4"  className={'panel nr4 flux'}>
                     Panel4
-                </Link>
+                </NavLink>
             </div>
             <div className={'row2'}>
-                <Link exact to="/" activeStyle={activeLinkStyle} className={'panel nr5'}>
+                <NavLink exact to="/5"  className={'panel nr5 flux'}>
                     Panel5
-                </Link>
-                <Link to="/hello/Jan" activeStyle={activeLinkStyle} className={'panel nr6'}>
+                </NavLink>
+                <NavLink to="/6"  className={'panel nr6 flux'}>
                     Panel6
-                </Link>
-                <Link to="/checkage/50" activeStyle={activeLinkStyle} className={'panel nr7'}>
+                </NavLink>
+                <NavLink to="/7"  className={'panel nr7 flux'}>
                     Panel7
-                </Link>
+                </NavLink>
             </div>
             <div className={'row3'}>
-                <Link exact to="/" activeStyle={activeLinkStyle} className={'panel nr8'}>
+                <NavLink exact to="/8"  className={'panel nr8 flux'}>
                     Panel8
-                </Link>
-                <Link to="/hello/Jan" activeStyle={activeLinkStyle} className={'panel main'}>
-                    Main
-                </Link>
-                <Link to="/checkage/50" activeStyle={activeLinkStyle} className={'panel nr10'}>
+                </NavLink>
+                <NavLink to="/main"  className={'panel main flux'}>
+                    {Main}
+                </NavLink>
+                <NavLink to="/10"  className={'panel nr10 flux'}>
                     Panel10
-                </Link>
+                </NavLink>
             </div>
         </div>
     )
@@ -53,34 +54,11 @@ const Navigation = () => {
 
 const Main = () => {
     return (
-        <h1>Welcome!</h1>
-    )
-};
-
-const HelloYou = ({ match }) => {
-    return (
-        <div>
-            <h1>Hello, {match.params.name}!</h1>
+        <div className={"activ"}>
+            <h1>Welcome!</h1>
         </div>
     )
 };
-
-const CheckAge = ({ match }) => {
-    return (
-        <div>
-            <h1>{match.params.age >= 18 ? "Pełnoletni" : "Niepełnoletni"}</h1>
-            <Link to="/hello/Kuba">Przywitaj się!</Link>
-        </div>
-    )
-};
-
-const FourOhFour = ({ match }) => {
-    return (
-        <h1>Ups, nie znaleziono widoku o nazwie: {match.params.view}</h1>
-    )
-};
-
-
 
 
 class App extends Component {
@@ -88,12 +66,9 @@ class App extends Component {
         return (
             <HashRouter>
                 <div>
-                    <Navigation />
+                <Navigation/>
                     <Switch>
-                        <Route exact path="/" component={Main} />
-                        <Route path="/hello/:name" component={HelloYou} />
-                        <Route path="/checkage/:age" component={CheckAge} />
-                        <Route path="/:view" component={FourOhFour} />
+                        <Route path="/main" component={Main} />
                     </Switch>
                 </div>
             </HashRouter>

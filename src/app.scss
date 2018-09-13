@@ -1,7 +1,13 @@
+body{
+  color: rgba(0, 0, 100, 0.2);
+  background-color:black;
+  //background-image: url('/img/background.jpg');
+}
+
+
 .container {
   width:100%;
   margin: 0 auto;
-  background: #ddd;
   display: flex;
   flex-direction: inherit ;
   justify-content: space-around;
@@ -31,10 +37,11 @@
 
 .panel {
   width: 20vw;
-  background: black;
   margin: 10px;
   transition: 1s;
   display: inline-block;
+  border-radius: 0.5vw;
+  color: rgba(0, 0, 100, 0.2);
 }
 
 .nr5 {
@@ -52,9 +59,8 @@
 
 .panel:hover {
   transform: scale(1.2);
-  background: darkcyan;
+  background-color: rgba(0, 0, 100, 0.2);
   z-index: 2;
-  box-shadow: 2px 2px 2px #000;
 }
 
 //for tablet
@@ -96,9 +102,8 @@
 
   .panel:hover {
     transform: scale(1.05);
-    background: darkcyan;
+    background-color: rgba(0, 0, 100, 0.2);
     z-index: 2;
-    box-shadow: 2px 2px 2px #000;
   }
 }
 
@@ -162,9 +167,82 @@
 
   .panel:hover {
     transform: scale(1.05);
-    background: darkcyan;
+    background-color: rgba(0, 0, 100, 0.2);
     z-index: 2;
-    box-shadow: 2px 2px 2px #000;
+  }
+}
+
+// activ panel
+
+.activ {
+  animation: activ 1s ease;
+  -moz-animation: activ 1s ease;
+  -webkit-animation: activ 1s ease;
+  width: 90vw;
+  height: 90vh;
+  //box-shadow: 0 0 1vw #1041FF, 0 0 5vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, 0 0 .1vw #147280;
+  border-radius: 1%;
+  border: 1px solid blue;
+  position: absolute;
+  left: 4vw;
+  top: 4vh;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+@keyframes activ {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.9}
+}
+// neon flux effect
+
+.neon {
+  color: #FB4264;
+  box-shadow: 0 0 0 #F40A35;
+}
+
+.flux {
+  color: #426DFB;
+  box-shadow: 0 0 0 #2356FF;
+}
+
+.neon {
+  animation: neon 1s ease infinite;
+  -moz-animation: neon 1s ease infinite;
+  -webkit-animation: neon 1s ease infinite;
+}
+
+@keyframes neon {
+  0%,
+  100% {
+    box-shadow: 0 0 1vw #FA1C16, 0 0 2vw #FA1C16, 0 0 3vw #FA1C16, 0 0 3vw #FA1C16, 0 0 .4vw #FED128, 0 0 .1vw #806914;
+    color: #FED128;
+  }
+  50% {
+    box-shadow: 0 0 .5vw #800E0B, 0 0 1vw #800E0B, 0 0 2vw #800E0B, 0 0 2vw #800E0B, 0 0 .2vw #800E0B, 0 0 .1vw #40340A;
+    color: #806914;
+  }
+}
+
+.flux {
+  animation: flux 5s linear infinite;
+  -moz-animation: flux 5s linear infinite;
+  -webkit-animation: flux 5s linear infinite;
+  -o-animation: flux 5s linear infinite;
+}
+
+@keyframes flux {
+  0%,
+  100% {
+    box-shadow: 0 0 1vw #1041FF, 0 0 2vw #1041FF, 0 0 3vw #1041FF, 0 0 3vw #1041FF, 0 0 .4vw #8BFDFE, 0 0 .1vw #147280;
+
+  }
+  50% {
+    box-shadow: 0 0 .5vw #082180, 0 0 1vw #082180, 0 0 2vw #082180, 0 0 2vw #082180, 0 0 .2vw #082180, 0 0 .1vw #0A3940;
+
   }
 }
 
