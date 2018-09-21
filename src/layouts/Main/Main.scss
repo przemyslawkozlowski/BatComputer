@@ -1,0 +1,55 @@
+.leftslide {
+  display: block;
+  font-size: 20px;
+  height: 100%;
+  position: absolute;
+  left: -0.5vw;
+  top: 40%;
+  z-index: 30;
+
+}
+
+.rightslide {
+  display: block;
+  font-size: 20px;
+  height: 100%;
+  position: absolute;
+  right: -0.5vw;
+  top: 40%;
+  z-index: 30;
+}
+
+.show {
+  animation: activ 1s ease;
+  -moz-animation: activ 1s ease;
+  -webkit-animation: activ 1s ease;
+  width: 95%;
+  height: 95%;
+  border-radius: 1%;
+  border: 1px solid #66b7df;
+  position: absolute;
+  left: 2.5%;
+  top: 2.5%;
+  z-index: 5;
+  color: #2b81af;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+@keyframes activ {
+  0% {
+    width: 1vw;
+    height: 1vh;
+    opacity: 0.1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+  100% {
+    width: 90vw;
+    height: 90vh;
+    opacity: 0.9;
+    position: absolute;
+    left: 2.5%;
+    top: 2.5%;
+  }
+}
